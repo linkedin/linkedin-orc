@@ -108,7 +108,7 @@ public class TestStringRedBlackTree {
     }
   }
 
-  private static class MyVisitor implements Dictionary.Visitor {
+  private static class MyVisitor implements StringRedBlackTree.Visitor {
     private final String[] words;
     private final int[] order;
     private final DataOutputBuffer buffer = new DataOutputBuffer();
@@ -120,7 +120,7 @@ public class TestStringRedBlackTree {
     }
 
     @Override
-    public void visit(Dictionary.VisitorContext context
+    public void visit(StringRedBlackTree.VisitorContext context
                      ) throws IOException {
       String word = context.getText().toString();
       assertEquals("in word " + current, words[current], word);
